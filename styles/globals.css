@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body, #__next{
+html,
+body,
+#__next {
   height: 100%;
+}
+
+@layer base {
+  input {
+    @apply border-0 focus:border-0 focus:ring-0 focus:outline-0;
+  }
 }
