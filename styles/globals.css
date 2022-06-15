@@ -13,3 +13,9 @@ body,
     @apply border-0 focus:border-0 focus:ring-0 focus:outline-0;
   }
 }
+
+.grid-container--fit {
+  grid-template-columns: repeat(auto-fit, minmax(18%, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
+}
+

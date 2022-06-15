@@ -1,13 +1,23 @@
 import React from "react";
 
-const NFTCard = ({ imageUrl }) => {
+const NFTCard = ({ imageUrl, title }) => {
+  const isMP4 = imageUrl.slice(-3) === "mp4";
   return (
-    <article className="h-48 w-48 relative rounded-2xl overflow-hidden">
-      <img src={`${imageUrl}`} className=" w-full h-full object-cover opacity-[0.9]" />
+    <article
+      className="h-[33.5vh] w-full relative rounded-xl overflow-hidden"
+      onClick={() => window.open(imageUrl, "_blank")}
+    >
+      {!isMP4 ? (
+        <img src={`${imageUrl}`} className="w-full h-full object-cover opacity-[0.95]" alt='nft' />
+      ) : (
+        <video src={imageUrl} autoPlay loop>
+          Tu navegador no admite el elemento <code>video</code>.
+        </video>
+      )}
       <div className="absolute w-full bottom-0 h-24 bg-gradient-to-b from-transparent to-black/50" />
 
       <span className="absolute bottom-[5%] left-[5%] border-white drop-shadow-[0_0_10px_rgba(1,1,1,1)]">
-        <p className="text-white text-[1.1rem] font-semibold ">NFT name</p>
+        <p className="text-white text-[1.1rem] font-semibold ">{title}</p>
         <p className="text-white text-[0.8rem]">by @NFTowner</p>
       </span>
 
