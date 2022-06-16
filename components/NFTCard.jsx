@@ -4,7 +4,7 @@ const NFTCard = ({ imageUrl, title }) => {
   const isMP4 = imageUrl.slice(-3) === "mp4";
   return (
     <article
-      className="h-[33.5vh] w-full relative rounded-xl overflow-hidden"
+      className="h-[45vw] md:h-[32vw] lg:h-[25vw] xl:h-[20vw] 2xl:h-[15vw] w-full relative rounded-xl overflow-hidden"
       onClick={() => window.open(imageUrl, "_blank")}
     >
       {!isMP4 ? (
@@ -17,8 +17,8 @@ const NFTCard = ({ imageUrl, title }) => {
       <div className="absolute w-full bottom-0 h-24 bg-gradient-to-b from-transparent to-black/50" />
 
       <span className="absolute bottom-[5%] left-[5%] border-white drop-shadow-[0_0_10px_rgba(1,1,1,1)]">
-        <p className="text-white text-[1.1rem] font-semibold ">{title}</p>
-        <p className="text-white text-[0.8rem]">by @NFTowner</p>
+        <p className="text-[0.7rem] text-white sm:text-[1rem] md:text-[1.1rem] font-semibold ">{title}</p>
+        <p className="text-[0.55rem] text-white sm:text-[0.75rem] md:text-[0.8rem]">by @NFTowner</p>
       </span>
 
       {/* <span className="absolute bottom-[5%] right-[5%] border-white">

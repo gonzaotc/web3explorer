@@ -22,13 +22,15 @@ export default function Home() {
         <div className="h-full border-black w-full">
           {/* header */}
           <header className="">
-            <div className="flex items-start justify-between">
+            <div className="flex items-center justify-between flex-col-reverse sm:flex-row sm:items-center mb-6">
               <SearchBar
                 searchAddress={searchAddress}
                 setSearchAddress={setSearchAddress}
                 setInspectedAddress={setInspectedAddress}
               />
-              <ConnectButton />
+              <span className="self-end">
+                <ConnectButton />
+              </span>
             </div>
 
             <Banner inspectedAddress={inspectedAddress} setInspectedAddress={setInspectedAddress} />
@@ -38,7 +40,7 @@ export default function Home() {
           <Catalogue inspectedAddress={inspectedAddress} title="Polygon NFTS" chainNumber={2} />
         </div>
         {/* second column */}
-        <div className="h-[calc(100vh-3.5rem)] w-[22%] 2xl:w-2/12 bg-primaryLight rounded-2xl"></div>
+        <div className="h-[calc(100vh-3.5rem)] w-[22%] hidden lg:flex 2xl:w-2/12 bg-primaryLight rounded-2xl"></div>
       </div>
     </div>
   );
