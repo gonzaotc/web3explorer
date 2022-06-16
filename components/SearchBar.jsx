@@ -3,7 +3,7 @@ import SearchIcon from "../icons/SearchIcon";
 
 const SearchBar = ({ searchAddress, setSearchAddress, setInspectedAddress }) => {
   const handleSearch = () => {
-    if (searchAddress && searchAddress.length === 42) {
+    if (searchAddress && searchAddress.trim().length === 42) {
       setInspectedAddress(searchAddress);
       setSearchAddress("");
       console.log("changing searchAddress");
