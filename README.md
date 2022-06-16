@@ -1,5 +1,5 @@
-##web3explorer
+## web3explorer
 
-Scan which digital assets an address owns.
+Inspect the digital assets that an address owns.
 
-Supported: Ethereum, Poylgon.
+Supported chains: Ethereum, Poylgon.
