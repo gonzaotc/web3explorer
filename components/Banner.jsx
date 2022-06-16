@@ -57,10 +57,11 @@ const Banner = ({ setInspectedAddress, inspectedAddress }) => {
           setInspectedAddress("0x9a6f7479cd5c3724749181e9725ff13be78014b6");
         }}
       >
-        0x9a6f7479cd5c3724749181e9725ff13be78014b6
+        test with: 0x9a6f7479cd5c3724749181e9725ff13be78014b6
       </span>
       <span className="absolute text-purple-200/75 right-3 bottom-2 hidden sm:flex">
-        inspecting: {" " + inspectedAddress ? inspectedAddress : "none"}
+        inspecting:{" "}
+        {" " + inspectedAddress && inspectedAddress?.length === 42 ? inspectedAddress : "none"}
       </span>
     </div>
   );

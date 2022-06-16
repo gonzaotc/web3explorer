@@ -3,13 +3,13 @@ import SearchIcon from "../icons/SearchIcon";
 
 const SearchBar = ({ searchAddress, setSearchAddress, setInspectedAddress }) => {
   const handleSearch = () => {
-    setInspectedAddress(searchAddress); 
-    setSearchAddress('')
+    setInspectedAddress(searchAddress);
+    setSearchAddress("");
     console.log("changing searchAddress");
   };
 
   return (
-    <div className="relative">
+    <form className="relative flex justify-center">
       <input
         type="text"
         placeholder="Search address"
@@ -20,17 +20,17 @@ const SearchBar = ({ searchAddress, setSearchAddress, setInspectedAddress }) => 
         }}
       />
       <span className="mt-2 md:mt-0 absolute top-[50%] translate-y-[-50%] left-3 w-7 h-7 text-secondary cursor-pointer">
-        <SearchIcon />
+        <SearchIcon onClick={handleSearch} searchAddress={searchAddress} />
       </span>
-      {searchAddress && searchAddress.length > 1 && (
+      {/* {searchAddress && searchAddress.length === 42 && (
         <button
-          className="py-2.5 px-7 text-white bg-purple-700 rounded-xl font-semibold ml-2.5"
+          className="py-2.5 px-6 hidden 2xl:inline text-white bg-purple-700 rounded-xl font-semibold ml-1"
           onClick={handleSearch}
         >
           search
         </button>
-      )}
-    </div>
+      )} */}
+    </form>
   );
 };
 
